@@ -39,6 +39,7 @@ function App() {
               <h2>{weatherData.name}</h2>
               <p>Температура: {weatherData.main.temp}</p>
               <p>Описание: {weatherData.weather[0].description}</p>
+              <p>Ветер: {weatherData.wind.speed} м/с </p>
             </div>
           )}
         </div>
