@@ -13,8 +13,14 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #476388;
-
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 17%,
+    rgba(131, 58, 180, 1) 29%,
+    rgba(253, 29, 29, 1) 42%,
+    rgba(252, 176, 69, 1) 89%
+  );
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +34,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 23%,
+    rgba(9, 9, 121, 1) 44%,
+    rgba(0, 212, 255, 1) 74%
+  );
 }
 
 h1 {
@@ -40,7 +53,7 @@ h1 {
 
 .search-city {
   input {
-    width: 200px;
+    width: 350px;
     height: 50px;
     outline: none;
     border-radius: 20px;
@@ -60,6 +73,27 @@ h1 {
     margin-right: 10px;
     outline: none;
     font-size: 20xp;
+    padding-left: 5px;
+  }
+
+  .btn {
+    outline: none;
+    border-color: none;
+    color: black;
+    transition: background-color 1s ease;
+    &:hover {
+      background-color: rgb(131, 58, 180);
+      background-color: linear-gradient(
+        90deg,
+        rgba(131, 58, 180, 1) 17%,
+        rgba(131, 58, 180, 1) 29%,
+        rgba(253, 29, 29, 1) 60%,
+        rgba(252, 176, 69, 1) 89%
+      );
+    }
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }
 

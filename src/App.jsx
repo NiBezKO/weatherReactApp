@@ -14,9 +14,10 @@ function App() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7340242db9652e40755295b11bdeb316`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7340242db9652e40755295b11bdeb316&lang={ru}&units=metric`,
       );
       setWeatherData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -28,14 +29,16 @@ function App() {
         <div className="weather">
           <h1 className="title text-red-400">weather NibeZKO</h1>
           <form className="form" onSubmit={getData}>
-            <input type="text" value={city} onChange={handleInputChange} />
-            <button type="submit">Get Weather</button>
+            <input type="text" value={city} onChange={handleInputChange} placeholder="Город" />
+            <button className="btn" type="submit" disabled={!city}>
+              Поиск
+            </button>
           </form>
           {weatherData && (
             <div className="info">
               <h2>{weatherData.name}</h2>
-              <p>Temperature: {weatherData.main.temp}</p>
-              <p>Description: {weatherData.weather[0].description}</p>
+              <p>Температура: {weatherData.main.temp}</p>
+              <p>Описание: {weatherData.weather[0].description}</p>
             </div>
           )}
         </div>
